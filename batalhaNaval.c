@@ -4,25 +4,32 @@ int main(){
 
 int tabuleiro[10][10];
 
-for(int i = 0; i<=10; i++){
-
-    for(int j = 0; j<=10; j++){
-
-        tabuleiro[i][j] = 0;
+for (int coluna = 0; coluna < 10; coluna++)
+{
+    for (int linha = 0; linha < 10; linha++)
+    {
+        tabuleiro[coluna][linha]=0;
     }
+    
 }
 
 
-int coluna = 0;
-int linha = 0;
-
-do
-{
-    for(coluna; coluna<=10; coluna++){
-        printf("%d|", tabuleiro[linha][coluna]);
+    for (int i = 0; i <= 9; i++)
+    {
+        for (int j = 0; j <= 9; j++)
+        {
+            if (i!=9)
+            {
+                printf("|%d|", tabuleiro[j][i]);
+            }else
+            {
+                printf("|%d| \n", tabuleiro[j][i]);
+            }
+            
+        }
+        
     }
-    linha++;
-} while (linha<=10);
+    
 
     return 0;
 }
