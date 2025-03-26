@@ -20,21 +20,17 @@ for (int coluna = 0; coluna < 10; coluna++)
 
 //impressão do tabuleiro somente com valores 0 para representar água
 printf("***Tabuleiro Batalha Naval*** \n");
+printf("\n");
 
     for (int i = 0; i <= 9; i++)
     {
         for (int j = 0; j <= 9; j++)
         {
-            if (j!=9)
-            {
                 printf("|%d|", tabuleiro[j][i]);
-            }else
-            {
-                printf("|%d| \n", tabuleiro[j][i]);
-            }
+            
             
         }
-        
+        printf("\n");
     }
     
     //alocação dos navios, representados pelo numero "3", no tabuleiro
@@ -45,31 +41,40 @@ printf("***Tabuleiro Batalha Naval*** \n");
         //alocação do segundo návio na horizontal
         while (navio2 <= 8)
         {
-            tabuleiro[navio2][7] = 3;
+            tabuleiro[navio2][8] = 3;
             navio2++;
         }
         
         navio1++;
     } while (navio1<5);
+
     
+    //alocação dos dois návios na diagonal
+    //alocação do primeiro navio em diiagonal
+    for (int i = 0, j = 9 ; i < 4 && j > 5 ; i++ , j--)
+    {
+        tabuleiro[j][i] = 3;
+    }
+
+    //alocação do segundo navio em diagonal
+    for (int i = 3, j = 8 ; i < 7 && j > 4 ; i++ , j--)
+    {
+        tabuleiro[j][i] = 3;
+    }
+
     
     printf("  \n");
     printf("***Tabuleiro Batalha Naval*** (com navios) \n");
+    printf("\n");
 
     for (int k = 0; k <= 9; k++)
     {
         for (int u = 0; u <= 9; u++)
         {
-            if (u!=9)
-            {
                 printf("|%d|", tabuleiro[u][k]);
-            }else
-            {
-                printf("|%d| \n", tabuleiro[u][k]);
-            }
             
         }
-        
+        printf("\n");
     }
 
     return 0;
